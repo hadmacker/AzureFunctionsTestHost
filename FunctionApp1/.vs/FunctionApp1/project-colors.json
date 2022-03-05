@@ -10,7 +10,12 @@
       "ProjectGuid": "b3cb031b-8c4d-4504-a457-41aaa55a9f97",
       "DisplayName": "Docs",
       "ColorIndex": 1
+    },
+    "d352c17c-3f65-4268-8514-ce9ddecd3882": {
+      "ProjectGuid": "d352c17c-3f65-4268-8514-ce9ddecd3882",
+      "DisplayName": "FunctionApp1Tests",
+      "ColorIndex": 2
     }
   },
-  "NextColorIndex": 2
+  "NextColorIndex": 3
 }

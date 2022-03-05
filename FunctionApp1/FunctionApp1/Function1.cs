@@ -12,6 +12,13 @@ namespace FunctionApp1
 {
     public class Function1
     {
+        private readonly INameService nameService;
+
+        public Function1(INameService nameService)
+        {
+            this.nameService = nameService;
+        }
+
         [FunctionName("Function1")]
         public async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)] HttpRequest req,
@@ -27,7 +34,7 @@ namespace FunctionApp1
 
             string responseMessage = string.IsNullOrEmpty(name)
                 ? "This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response."
-                : $"Hello, {name}. This HTTP triggered function executed successfully.";
+                : nameService.Message(name);
 
             return new OkObjectResult(responseMessage);
         }
